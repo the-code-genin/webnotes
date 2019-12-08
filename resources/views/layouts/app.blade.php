@@ -12,7 +12,7 @@
 
             {{-- Page header --}}
             <header class="col-sm-12">
-                <h1 class="text-center"><a href="{{ route('index') }}" class="text text-warning">Web Notes</a></h1>
+                <h1 class="text-center"><a href="{{ route('notes.index') }}" class="text text-warning">Web Notes</a></h1>
             </header>
 
             {{-- Page content --}}
