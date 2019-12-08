@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <article class="card">
+    <article class="card shadow">
 
         <div class="card-header">
             <h2>{{ $note->title }}</h2>
