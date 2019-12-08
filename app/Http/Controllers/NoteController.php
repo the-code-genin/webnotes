@@ -14,7 +14,11 @@ class NoteController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $notes = Note::orderBy('updated_at', 'DESC')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(15);
+
+        return view('index', ['notes' => $notes]);
     }
 
     /**
