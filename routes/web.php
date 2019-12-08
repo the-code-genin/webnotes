@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// The note controller is the main app
+Route::resource('', 'NoteController');
