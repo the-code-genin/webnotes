@@ -50,7 +50,7 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
-        //
+        return view('reader', ['note' => $note]);
     }
 
     /**
