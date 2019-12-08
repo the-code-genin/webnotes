@@ -28,7 +28,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        return view('editor');
     }
 
     /**
@@ -61,7 +61,7 @@ class NoteController extends Controller
      */
     public function edit(Note $note)
     {
-        //
+        return view('editor', ['note' => $note]);
     }
 
     /**
