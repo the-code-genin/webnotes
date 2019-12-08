@@ -12,4 +12,5 @@
 */
 
 // The note controller is the main app
-Route::resource('', 'NoteController');
+Route::get('/', 'NoteController@index');
+Route::resource('notes', 'NoteController');
