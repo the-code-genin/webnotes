@@ -3,7 +3,7 @@
 @section('content')
 
     {{-- Link to create a new web note --}}
-    <a href="{{ route('create') }}" class="btn btn-success btn-block">Create New Web Note</a>
+    <a href="{{ route('notes.create') }}" class="btn btn-success btn-block">Create New Web Note</a>
 
     {{-- Render the web notes --}}
     @if (count($notes) > 0)
