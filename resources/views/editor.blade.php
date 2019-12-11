@@ -16,8 +16,7 @@
             </div>
 
             <div class="form-group">
-                <textarea id="ckeditor" placeholder="Note Content" rows="10" class="form-control" required="true"></textarea>
-                <input type="hidden" name="content" @if (isset($note)) value="{{$note->content}}" @endif>
+                <textarea id="ckeditor" placeholder="Note Content" rows="10" class="form-control" required="true">@if (isset($note)){{$note->content}}@endif</textarea>
             </div>
 
         </form>
