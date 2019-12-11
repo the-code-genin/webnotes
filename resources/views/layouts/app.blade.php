@@ -4,6 +4,7 @@
     <title>@section('title')Web Notes @show</title>
     <meta name="viewport" content="width=device-width;intial-scale=1.0" />
     <link rel="stylesheet" href="{{ url('bootstrap-4.3.1-dist/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url('css/animate.min.css') }}" />
 </head>
 <body>
     
@@ -31,6 +32,10 @@
         </div>
     </div>
 
+    <script src="{{ url('js/popper.min.js') }}"></script>
+    <script src="{{ url('js/jquery.min.js') }}"></script>
     <script src="{{ url('bootstrap-4.3.1-dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url('js/bootstrap-notify.min.js') }}"></script>
+    <script src="{{ url('js/iyiola-forms.js') }}"></script>
 </body>
 </html>
