@@ -101,7 +101,23 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        //
+        $valid = $this->getValidationFactory()->make($request->all(), [
+            'title' => 'required|unique:notes,title,' . $note->id,
+            'content' => 'required',
+        ]);
+
+        if ($valid->fails()) {
+            $this->response['message'] = $valid->getMessageBag()->first();
+            return $this->response;
+        }
+
+        $note->title = $request->input('title');
+        $note->content = $request->input('content');
+        $note->save();
+
+        $this->response['ok'] = true;
+        $this->response['message'] = 'Note updated successfully';
+        return $this->response;
     }
 
     /**
