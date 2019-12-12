@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
 
 class NoteController extends Controller
 {
@@ -66,7 +65,7 @@ class NoteController extends Controller
 
         $this->response['ok'] = true;
         $this->response['message'] = 'Note created successfully';
-        $this->response['data']['redirect'] = route('notes.edit', $note);
+        $this->response['data']['redirect'] = route('notes.index');
         return $this->response;
     }
 
