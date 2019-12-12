@@ -37,5 +37,6 @@
     <script src="{{ url('bootstrap-4.3.1-dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ url('js/bootstrap-notify.min.js') }}"></script>
     <script src="{{ url('js/iyiola-forms.js') }}"></script>
+    <script src="{{ url('js/scripts.js') }}"></script>
 </body>
 </html>
