@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
 
 class NoteController extends Controller
 {
+    protected $response = [
+        'ok' => false,
+        'message' => '',
+        'data' => [
+            'reload' => false,
+            'redirect' => null
+        ]
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +49,7 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -80,10 +90,14 @@ class NoteController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Note  $note
-     * @return \Illuminate\Http\Response
+     * @return array
      */
     public function destroy(Note $note)
     {
-        //
+        $note->delete();
+        $this->response['ok'] = true;
+        $this->response['message'] = 'Note deleted successfully';
+        $this->response['data']['reload'] = true;
+        return $this->response;
     }
 }
