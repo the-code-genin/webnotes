@@ -4,3 +4,9 @@ $('.delete-btn').on('click', function() {
         form.trigger('submit');
     }
 });
+
+$('#discard_note_btn').on('click', function() {
+    if (confirm('Are you sure you want to discard your progress?')) {
+        window.location = $(this).data('url');
+    }
+})
