@@ -49,7 +49,25 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $valid = $this->getValidationFactory()->make($request->all(), [
+            'title' => 'required|unique:notes,title',
+            'content' => 'required',
+        ]);
+
+        if ($valid->fails()) {
+            $this->response['message'] = $valid->getMessageBag()->first();
+            return $this->response;
+        }
+
+        $note = new Note;
+        $note->title = $request->input('title');
+        $note->content = $request->input('content');
+        $note->save();
+
+        $this->response['ok'] = true;
+        $this->response['message'] = 'Note created successfully';
+        $this->response['data']['redirect'] = route('notes.edit', $note);
+        return $this->response;
     }
 
     /**

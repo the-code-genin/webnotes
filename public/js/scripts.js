@@ -9,4 +9,8 @@ $('#discard_note_btn').on('click', function() {
     if (confirm('Are you sure you want to discard your progress?')) {
         window.location = $(this).data('url');
     }
-})
+});
+
+$('#save_note_btn').on('click', function() {
+    $('#editor_form').trigger('submit');
+});

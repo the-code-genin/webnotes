@@ -9,16 +9,18 @@
         </div>
 
         <form action="@if (!isset($note)) {{route('notes.store')}} @else {{route('notes.update', ['note' => $note->id])}} @endif" method="POST"
-            class="card-body" id="editor_form">
+            class="card-body ajax-form" id="editor_form">
 
             <div class="form-group">
-                <input type="text" name="title" placeholder="Note Title" class="form-control" required="true" @if (isset($note)) value="{{$note->title}}" @endif/>
+                <input type="text" name="title" placeholder="Note Title" class="form-control" required @if (isset($note)) value="{{$note->title}}" @endif/>
             </div>
 
             <div class="form-group">
-                <textarea id="ckeditor" name="content" placeholder="Note Content" rows="10" class="form-control" required="true">@if (isset($note)){{$note->content}}@endif</textarea>
+                <textarea id="ckeditor" name="content" placeholder="Note Content" rows="10" class="form-control" required>@if (isset($note)){{$note->content}}@endif</textarea>
             </div>
 
+            {{ csrf_field() }}
+            @if (!isset($note)) {{ method_field('POST') }} @else {{ method_field('PATCH') }} @endif
         </form>
 
         <div class="card-footer">
