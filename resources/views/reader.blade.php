@@ -8,7 +8,7 @@
         </div>
 
         <div class="card-body">
-            <p class="card-text lead">{{ $note->content }}</p>
+            <p class="card-text lead" style="white-space: pre-line;">{{ $note->content }}</p>
         </div>
 
         <div class="card-footer">
